@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateFormTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateFormLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{formController.selected.id}" title="#{bundle.CreateFormTitle_id}" />
+                    <h:outputLabel value="#{bundle.CreateFormLabel_noKtp}" for="noKtp" />
+                    <h:inputText id="noKtp" value="#{formController.selected.noKtp}" title="#{bundle.CreateFormTitle_noKtp}" required="true" requiredMessage="#{bundle.CreateFormRequiredMessage_noKtp}"/>
+                    <h:outputLabel value="#{bundle.CreateFormLabel_nama}" for="nama" />
+                    <h:inputText id="nama" value="#{formController.selected.nama}" title="#{bundle.CreateFormTitle_nama}" required="true" requiredMessage="#{bundle.CreateFormRequiredMessage_nama}"/>
+                    <h:outputLabel value="#{bundle.CreateFormLabel_alamat}" for="alamat" />
+                    <h:inputTextarea rows="4" cols="30" id="alamat" value="#{formController.selected.alamat}" title="#{bundle.CreateFormTitle_alamat}" required="true" requiredMessage="#{bundle.CreateFormRequiredMessage_alamat}"/>
+                    <h:outputLabel value="#{bundle.CreateFormLabel_nomerTelepon}" for="nomerTelepon" />
+                    <h:inputText id="nomerTelepon" value="#{formController.selected.nomerTelepon}" title="#{bundle.CreateFormTitle_nomerTelepon}" required="true" requiredMessage="#{bundle.CreateFormRequiredMessage_nomerTelepon}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{formController.create}" value="#{bundle.CreateFormSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{formController.prepareList}" value="#{bundle.CreateFormShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateFormIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

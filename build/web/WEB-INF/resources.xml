@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <Resource id="jdbc/covidform" type="javax.sql.DataSource">#Fri Jun 05 09:18:57 ICT 2020
+jdbcDriver=com.mysql.jdbc.Driver
+password=
+userName=root
+jdbcUrl=jdbc\:mysql\://localhost\:3306/covidform?zeroDateTimeBehavior\=convertToNull
+</Resource>
+</resources>

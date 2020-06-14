@@ -6,4 +6,5 @@
 0. Configure database from `covidform.sql`
 1. Clone this repo
 2. Open the cloned repo folder with NetBeans or Intellij
-3. Configure TomEE location if necessary
+4. Configure MySQL credentials (username, password, url) in `web/WEB-INF/resources.xml`
+5. Configure TomEE location if necessary
